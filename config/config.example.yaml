@@ -1,0 +1,16 @@
+project: soccer-baseball-prediction
+data_policy: chronological_oos
+storage:
+  github: code_manifests_small_files
+  large_data: google_drive_or_authorized_storage
+sources:
+  football_data: public_csv
+  statsbomb: open_data_only
+  understat: public_access_subject_to_terms
+  mlb_statcast: public_data
+  npb: authorized_files_only
+prediction:
+  cutoff_required: true
+  no_future_features: true
+  save_published_at: true
+  save_ingested_at: true

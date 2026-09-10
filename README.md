@@ -1,19 +1,18 @@
-# Soccer & NPB Prediction Data Lake
+# Soccer & Baseball Prediction Data Lake
 
-Google Colab notebook for chronological soccer and baseball prediction data acquisition and feature engineering.
+GitHub中心で運用する、サッカー・野球予測モデル用の時系列データ基盤です。
 
-## Notebook
+## Colab smoke test
 
-Open `notebooks/sports_prediction_data_lake_colab.ipynb` in Google Colab.
+[Open the smoke-test notebook in Colab](https://colab.research.google.com/github/sasasotaro1202-star/soccer-npb-data/blob/main/notebooks/colab_smoke_test.ipynb)
 
-## Sources
+The smoke test verifies Python, pandas, Parquet, chronology checks, feature generation, and ZIP export without requiring private API keys.
 
-- Football-Data.co.uk
-- StatsBomb Open Data
-- Understat
-- MLB Statcast test retrieval
-- Authorized manual imports for NPB, licensed player data, odds, weather, injuries, and lineups
+## Scope
 
-## Important
+- Soccer: Football-Data.co.uk, StatsBomb Open Data, Understat where available
+- Baseball: MLB public data / Statcast where available, and authorized NPB files supplied by the user
+- Storage: GitHub for code and small manifests; Google Drive or other authorized storage for large RAW files
+- Validation: chronological ordering, prediction cutoff, duplicate detection, missingness, and leakage flags
 
-The notebook preserves raw data, records source and ingestion timestamps, builds leak-safe chronological features, writes coverage and quality reports, and exports a ZIP archive. It does not bypass authentication, provider terms, or licensing restrictions.
+No authentication, paywall, robots policy, or provider terms are bypassed. Licensed or private data must be placed in `dropzone/` only when the user is authorized to use it.
